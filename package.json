@@ -1,0 +1,52 @@
+{
+	"name": "uresolver",
+	"description": "json resolver",
+	"version": "2.0.0",
+	"type": "module",
+	"source": "./src/index.js",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"browser": "./dist/index.es.js",
+	"unpkg": "./dist/index.min.js",
+	"umd:main": "./dist/index.umd.js",
+	"exports": {
+		"browser": "./dist/index.es.js",
+		"umd": "./dist/index.umd.js",
+		"import": "./dist/index.es.js",
+		"default": "./dist/index.es.js",
+		"require": "./dist/index.js"
+	},
+	"types": "./index.d.ts",
+	"files": [
+		"dist"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kethan/uresolve.git"
+	},
+	"scripts": {
+		"build": "rollup --config rollup.config.js",
+		"test": "node test.js"
+	},
+	"devDependencies": {
+		"@rollup/plugin-terser": "^0.4.4",
+		"rollup": "^4.19.0",
+		"rollup-plugin-bundle-size": "^1.0.3",
+		"rollup-plugin-copy": "^3.5.0"
+	},
+	"keywords": [
+		"resolve",
+		"resolver",
+		"uresolver",
+		"uresolve",
+		"json",
+		"promise",
+		"array"
+	],
+	"author": "Kethan Surana",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/kethan/uresolve/issues"
+	},
+	"homepage": "https://github.com/kethan/uresolve#readme"
+}
