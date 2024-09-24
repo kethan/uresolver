@@ -1,7 +1,7 @@
 {
 	"name": "uresolver",
 	"description": "json resolver",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"type": "module",
 	"source": "./src/index.js",
 	"main": "./dist/index.js",
@@ -22,7 +22,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/kethan/uresolve.git"
+		"url": "git+https://github.com/kethan/uresolver.git"
 	},
 	"scripts": {
 		"build": "rollup --config rollup.config.js",
@@ -37,8 +37,8 @@
 	"keywords": [
 		"resolve",
 		"resolver",
+		"uresolverr",
 		"uresolver",
-		"uresolve",
 		"json",
 		"promise",
 		"array"
@@ -46,7 +46,7 @@
 	"author": "Kethan Surana",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/kethan/uresolve/issues"
+		"url": "https://github.com/kethan/uresolver/issues"
 	},
-	"homepage": "https://github.com/kethan/uresolve#readme"
+	"homepage": "https://github.com/kethan/uresolver#readme"
 }
