@@ -5,7 +5,8 @@ const resolve = (resolvers, options = {}) => ({
     const resolver = async (resolverObj) => {
       const errors = {};
       let resolvedFields = {};
-      resolverObj = await (options.converter ? options.converter(resolverObj, context) : resolverObj);
+      resolverObj = (await (options.converter ? options.converter(resolverObj, context) : resolverObj)) || {};
+
       const fieldsToResolve = new Set([...Object.keys(resolverObj), ...Object.keys(resolvers)]);
 
       await Promise.all(
@@ -14,12 +15,12 @@ const resolve = (resolvers, options = {}) => ({
           if (resolvers[field]) {
             try {
               const resolvedValue = await resolvers[field](value, resolverObj, context);
-              resolvedFields = { ...resolvedFields, ...(resolvedValue !== undefined ? { [field]: resolvedValue } : {}) };
+              if (resolvedValue !== undefined) resolvedFields[field] = resolvedValue;
             } catch (error) {
               errors[field] = { message: error.message };
             }
           } else {
-            resolvedFields = { ...resolvedFields, [field]: value };
+            resolvedFields[field] = value;
           }
         })
       );
@@ -39,4 +40,4 @@ const resolve = (resolvers, options = {}) => ({
 
 const virtual = (resolver) => (_, obj, context) => resolver(obj, context);
 
-export { resolve, virtual }
+export { resolve, virtual };
